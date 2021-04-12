@@ -1,0 +1,13 @@
+Difficulty,Cursor,Total Ducks Missed,Ducks Missed in Round,Missed Clicks,Missed Clicks in Round,Current Score,Total Score
+Easy,Area,0,0,0,0,0,0
+Easy,Area,0,0,0,0,0,0
+Medium,Area,0,0,0,0,2,2
+Hard,Area,0,0,1,1,2,4
+Easy,Normal,0,0,1,0,1,5
+Easy,Normal,0,0,1,0,0,5
+Medium,Normal,0,0,1,0,0,5
+Hard,Normal,0,0,2,1,1,6
+Easy,Sticky,0,0,2,0,1,7
+Easy,Sticky,0,0,2,0,1,8
+Medium,Sticky,0,0,2,0,4,12
+Hard,Sticky,0,0,3,1,2,14

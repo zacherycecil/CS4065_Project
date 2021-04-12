@@ -603,7 +603,7 @@ ScriptsOnlyBuild:
     className: Slider
   - hash:
       serializedVersion: 2
-      Hash: 9e6d079bc0d7b903e7b56cd7487ef1b5
+      Hash: 642364b5bf58f89b26d41db39ccbca6f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameController

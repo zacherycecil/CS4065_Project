@@ -24,6 +24,7 @@ public class GameController : MonoBehaviour
     public int startingScheme;
 
     public int difficulty;
+    public bool practiceDone;
 
     public int[] speeds;
 
@@ -46,6 +47,7 @@ public class GameController : MonoBehaviour
         aimingScheme = 0;
         difficulty = 0;
         gameDone = false;
+        practiceDone = false;
 
         foreach (GameObject cursor in cursors)
         {
@@ -147,7 +149,26 @@ public class GameController : MonoBehaviour
         }
         else if (!roundStarted)
         {
-            menuText.text = "Press spacebar to continue.";
+            if (aimingScheme == 0)
+                menuText.text = "AREA CURSOR - ";
+            else if (aimingScheme == 1)
+                menuText.text = "NORMAL CURSOR - ";
+            else if (aimingScheme == 2)
+                menuText.text = "STICKY CURSOR - ";
+
+            if (!practiceDone)
+                menuText.text += "PRACTICE\n";
+            else
+            {
+                if (difficulty < 2)
+                    menuText.text += "EASY\n";
+                else if (difficulty == 2)
+                    menuText.text += "MEDIUM\n";
+                else if (difficulty == 3)
+                    menuText.text += "HARD\n";
+            }
+
+            menuText.text += "Press spacebar to continue.";
             scoreText.text = "";
         }
         else
@@ -167,23 +188,25 @@ public class GameController : MonoBehaviour
         {
             statTracker.SetRoundData(difficulty, aimingScheme);
             statTracker.ToOutput();
-
-            if (difficulty < 2)
+            if(!practiceDone)
+            {
+                practiceDone = true;
+                roundStarted = false;
+            }
+            else if (difficulty < 2)
             {
                 difficulty = 2;
                 roundStarted = false;
-                Debug.Log("1");
             }
             else if (difficulty < 3)
             {
                 difficulty = 3;
                 roundStarted = false;
-                Debug.Log("2");
             }
             else
             {
+                practiceDone = false;
                 difficulty = 0;
-                Debug.Log("3");
                 cursors[0].SetActive(false);
                 cursors[1].SetActive(false);
                 cursors[2].SetActive(false);
